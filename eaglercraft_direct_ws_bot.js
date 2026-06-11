@@ -9,6 +9,11 @@ const JOIN_CODE = process.env.JOIN_CODE || 'a1qg1';
 const RELAY_URL = 'wss://relay.lax1dude.net/';
 const BOT_NAME = 'Manus';
 
+const http = require('http');
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Manus Bot is running!\n');
+}).listen(process.env.PORT || 3000);
 console.log(`🤖 Eaglercraft直接WebSocketボット起動`);
 console.log(`📍 Relay URL: ${RELAY_URL}`);
 console.log(`🔑 Join Code: ${JOIN_CODE}`);
