@@ -31,10 +31,11 @@ class EaglerCraftBot extends EventEmitter {
   }
 
   connect() {
-    const wsUrl = `${RELAY_URL}${this.joinCode}`;
+      const wsUrl = `${RELAY_URL}${this.joinCode}`;
+      const wsOptions = { headers: { 'Origin': 'https://eaglercraft.com' } };
     console.log(`🔗 接続中: ${wsUrl}`);
 
-    this.ws = new WebSocket(wsUrl);
+    this.ws = new WebSocket(wsUrl, null, wsOptions);
 
     this.ws.on('open', () => {
       console.log('✅ WebSocket接続成功');
