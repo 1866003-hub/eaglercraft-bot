@@ -35,7 +35,8 @@ class EaglerCraftBot extends EventEmitter {
       const wsOptions = { headers: { 'Origin': 'https://eaglercraft.com' } };
     console.log(`🔗 接続中: ${wsUrl}`);
 
-    this.ws = new WebSocket(wsUrl, null, wsOptions);
+    this.ws = new WebSocket(wsUrl, wsOptions);
+
 
     this.ws.on('open', () => {
       console.log('✅ WebSocket接続成功');
