@@ -58,7 +58,8 @@ class EaglerCraftBot extends EventEmitter {
       console.log('⚠️ WebSocket接続切断');
       this.connected = false;
       this.emit('disconnect');
-      setTimeout(() => this.connect(), 5000);
+      setTimeout(() => this.connect(), 10000);
+
     });
   }
 
